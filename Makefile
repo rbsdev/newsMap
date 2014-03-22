@@ -1,6 +1,6 @@
 .SILENT:
 run:
-	python project/manage.py runserver
+	python news_map/manage.py runserver
 
 test:
-	python project/manage.py test 
+	python news_maps/manage.py test 
