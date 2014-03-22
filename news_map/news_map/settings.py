@@ -1,3 +1,5 @@
+import os
+
 # Django settings for news_map project.
 
 DEBUG = True
@@ -17,7 +19,7 @@ DATABASES = {
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'PORT': '',               # Set to empty string for default.
     }
 }
 
@@ -72,6 +74,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.abspath(os.path.join(__file__, '../../static')),
 )
 
 # List of finder classes that know how to find static files in
@@ -111,6 +114,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.abspath(os.path.join(__file__, '../templates'))
 )
 
 INSTALLED_APPS = (
