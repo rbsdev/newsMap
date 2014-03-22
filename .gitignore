@@ -1,6 +1,7 @@
 
 *che__/
 *.py[cod]
+*.pyc
 
 # C extensions
 *.so
