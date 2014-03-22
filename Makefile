@@ -6,4 +6,4 @@ syncdb:
 	python news_map/manage.py syncdb
 
 test:
-	python news_maps/manage.py test 
+	python news_maps/manage.py test

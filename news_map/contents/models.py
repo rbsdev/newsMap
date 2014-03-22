@@ -8,3 +8,7 @@ class Content(models.Model):
   tag = models.ForeignKey(Tag)
   title = models.CharField(max_length=50)
   description = models.CharField(max_length=100, unique=True)
+
+
+class New():
+  pass
