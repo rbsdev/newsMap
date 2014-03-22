@@ -10,5 +10,7 @@ class Content(models.Model):
   description = models.CharField(max_length=100, unique=True)
 
 
-class New():
-  pass
+class New(Content):
+  date = models.DateField()
+  lat = models.IntegerField()
+  lon = models.IntegerField()
