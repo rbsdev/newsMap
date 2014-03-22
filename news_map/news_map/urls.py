@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'contents.urls', name='home'),
+    url(r'^$', include('contents.urls')),
     # url(r'^news_map/', include('news_map.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
