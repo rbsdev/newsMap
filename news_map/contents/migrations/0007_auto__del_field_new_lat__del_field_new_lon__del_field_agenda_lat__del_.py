@@ -20,11 +20,6 @@ class Migration(SchemaMigration):
         # Deleting field 'Agenda.lon'
         db.delete_column(u'contents_agenda', 'lon')
 
-        # Adding field 'Content.video'
-        db.add_column(u'contents_content', 'video',
-                      self.gf('django.db.models.fields.CharField')(max_length=300, null=True),
-                      keep_default=False)
-
         # Adding field 'Content.lat'
         db.add_column(u'contents_content', 'lat',
                       self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True),
@@ -57,9 +52,6 @@ class Migration(SchemaMigration):
                       self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True),
                       keep_default=False)
 
-        # Deleting field 'Content.video'
-        db.delete_column(u'contents_content', 'video')
-
         # Deleting field 'Content.lat'
         db.delete_column(u'contents_content', 'lat')
 
@@ -80,7 +72,6 @@ class Migration(SchemaMigration):
             'lon': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
             'tag': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['contents.Tag']", 'null': 'True', 'blank': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '60'}),
-            'video': ('django.db.models.fields.CharField', [], {'max_length': '300', 'null': 'True'})
         },
         u'contents.new': {
             'Meta': {'object_name': 'New', '_ormbases': [u'contents.Content']},
