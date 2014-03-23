@@ -1,1 +1,17 @@
 /*Testing*/
+
+header {
+	height: 30px;
+}
+
+#map-container {
+	min-height: 400px;
+}
+
+.footer-menu  {
+	font-size: 0;
+}
+
+.footer-menu button {
+	/*width: 32%;*/
+}
