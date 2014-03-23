@@ -52,9 +52,9 @@ def places_view(request, total=1, with_json=True):
 
 
 def contents_view(request):
-  news = news_view(request, 10, False)[0]
-  agendas = agendas_view(request, 10, False)[0]
-  places = places_view(request, 10, False)[0]
+  news = zip(news_view(request, 10, False))
+  agendas = zip(agendas_view(request, 10, False))
+  places = zip(places_view(request, 10, False))
 
   total = {
     'news': news,
