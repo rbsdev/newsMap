@@ -10,15 +10,43 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="stylesheet" href="{% static 'bower_components/sass-bootstrap/dist/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
     </head>
     <body>
+        <div class="container">
+            <header>AQUI</header>
+            <div class="row">
+                <div class="col-md-12" id="map-container"></div>
+            </div>
+            <div class="row footer-menu">
+                <div class=" col-sm-4">Large button</div>
+                <div class=" col-sm-4">Large button</div>
+                <div class=" col-sm-4">Large button</div>
+            </div>
+        </div>
+<!-- 
         {% block content %}{% endblock %}
         {% block script %}{% endblock %}
+ -->
+
         <script type="text/javascript" src="{% static 'bower_components/jquery/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
         <script type="text/javascript" src="{% static 'bower_components/backbone/backbone.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/MainPage.js' %}"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCgpmKdlhz07ssJNrvVO4I3irpxstKnTdA&sensor=false"></script>
+
+        <script type="text/javascript" src="{% static 'js/Router.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/model/App.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/view/AppView.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'js/model/MapComponent.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/view/MapComponentView.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'js/model/FooterMenu.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/view/FooterMenuView.js' %}"></script>        
+
+        <script type="text/javascript" src="{% static 'js/model/Page.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/model/MainPage.js' %}"></script>
     </body>
 </html>
