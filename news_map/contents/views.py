@@ -66,3 +66,8 @@ def contents_view(request):
   data = json.dumps(total)
 
   return HttpResponse(data, mimetype='application/json')
+
+def new_detail_view(request, id):
+  new = New.objects.get(id=id)
+  data = json.dumps(new.__dict__)
+  return HttpResponse(data, mimetype='application/json')
