@@ -29,6 +29,9 @@ class New(Content):
 
 
 class Agenda(Content):
+  start_date = models.DateField(null=True, blank=True)
+  finish_date = models.DateField(null=True, blank=True)
+
   class Meta:
     verbose_name = 'agenda'
 
