@@ -12,9 +12,9 @@ class Content(models.Model):
   tag = models.ForeignKey(Tag, null=True, blank=True)
   title = models.CharField(max_length=60)
   description = models.TextField(unique=True)
-  video = models.CharField(max_length=300, null=True)
   lat = models.CharField(max_length=50, null=True, blank=True)
   lon = models.CharField(max_length=50, null=True, blank=True)
+  video = models.CharField(max_length=300, null=True, blank=True)
 
   def __unicode__(self):
     return self.title
