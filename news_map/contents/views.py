@@ -32,8 +32,7 @@ def news_view(request, total=1, with_json=True):
 def agendas_view(request, total=1, with_json=True):
   start = 0
   agendas = Agenda.objects.all()[start:total].\
-                          values('id', 'title', 'lat', 'lon', 'description',\
-                                 'start_date', 'finish_date')
+                          values('id', 'title', 'lat', 'lon', 'description')
 
   if with_json:
     return convert_to_json(agendas)
@@ -66,6 +65,7 @@ def contents_view(request):
   data = json.dumps(total)
 
   return HttpResponse(data, mimetype='application/json')
+
 
 def new_detail_view(request, id):
   new = New.objects.get(id=id)
