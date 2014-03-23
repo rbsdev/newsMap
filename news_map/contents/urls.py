@@ -8,4 +8,5 @@ urlpatterns = patterns('',
   url(r'^agendas/(?P<total>\d{1,2})/$', views.agendas_view, name='agendas'),
   url(r'^places/(?P<total>\d{1,2})/$', views.places_view, name='places'),
   url(r'^contents/$', views.contents_view, name='contents'),
+  url(r'^new-detail/(?P<id>\d{1,4})/$', views.new_detail_view, name='new_detail'),
 )
