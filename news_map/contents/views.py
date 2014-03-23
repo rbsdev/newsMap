@@ -52,9 +52,9 @@ def places_view(request, total=1, with_json=True):
 
 
 def contents_view(request):
-  news = news_view(request, 10, False)[0]
-  agendas = agendas_view(request, 10, False)[0]
-  places = places_view(request, 10, False)[0]
+  news = news_view(request, 10, False)
+  agendas = agendas_view(request, 10, False)
+  places = places_view(request, 10, False)
 
   total = {
     'news': news,
@@ -74,5 +74,15 @@ def new_detail_view(request, id):
   new.__dict__.pop('image', None)
 
   data = json.dumps(new.__dict__)
+
+  return HttpResponse(data, mimetype='application/json')
+
+def new_agenda_view(request, id):
+  agenda = Agenda.objects.get(id=id)
+  agenda.__dict__.pop('_state', None)
+  agenda.__dict__.pop('start_date', None)
+  agenda.__dict__.pop('finish_date', None)
+
+  data = json.dumps(agenda.__dict__)
 
   return HttpResponse(data, mimetype='application/json')
