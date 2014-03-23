@@ -69,5 +69,9 @@ def contents_view(request):
 
 def new_detail_view(request, id):
   new = New.objects.get(id=id)
+  new.__dict__.pop('_state', None)
+  new.__dict__.pop('date', None)
+  import pdb; pdb.set_trace()
   data = json.dumps(new.__dict__)
+
   return HttpResponse(data, mimetype='application/json')
