@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Tag(models.Model):
   name = models.CharField(max_length=50, unique=True)
 
@@ -11,6 +12,6 @@ class Content(models.Model):
 
 
 class New(Content):
-  date = models.DateField()
-  lat = models.IntegerField()
-  lon = models.IntegerField()
+  date = models.DateField(auto_now=True)
+  lat = models.CharField(max_length=50, null=True)
+  lon = models.CharField(max_length=50, null=True)
