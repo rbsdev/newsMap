@@ -22,11 +22,18 @@ class New(Content):
   lat = models.CharField(max_length=50, null=True)
   lon = models.CharField(max_length=50, null=True)
 
+  class Meta:
+    verbose_name = 'noticia'
+
 
 class Agenda(Content):
   lat = models.CharField(max_length=50, null=True)
   lon = models.CharField(max_length=50, null=True)
 
+  class Meta:
+    verbose_name = 'agenda'
+
 
 class Place(Content):
-  pass
+  class Meta:
+    verbose_name = 'lugar'
